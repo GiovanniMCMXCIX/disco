@@ -1,7 +1,7 @@
+import six
 from setuptools import setup, find_packages
 
 from disco import VERSION
-
 
 with open('requirements.txt') as f:
     requirements = f.readlines()
@@ -10,11 +10,11 @@ with open('README.md') as f:
     readme = f.read()
 
 extras_require = {
-    'voice': ['pynacl==1.1.2'],
+    'voice': ['pynacl==1.2.1'],
     'http': ['flask==0.12.2'],
     'yaml': ['pyyaml==3.12'],
-    'music': ['youtube_dl>=2017.10.20'],
-    'performance': ['erlpack==0.3.2', 'ujson==1.35'],
+    'music': ['youtube_dl>=2017.12.2'],
+    'performance': ['erlpack==0.3.2' if six.PY2 else 'earl-etf==2.1.2', 'ujson==1.35'],
     'sharding': ['gipc==0.6.0'],
     'docs': ['biblio==0.0.4'],
 }
